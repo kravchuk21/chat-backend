@@ -4,8 +4,25 @@
   "description": "Backend for chat (https://github.com/kravchuk21/chat)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --fix",
+    "dev": "nodemon",
+    "tsc": "tsc",
+    "build": "rimraf ./dist && npm run tsc",
+    "start": "npm run build && node dist/index.js"
   },
   "author": "kravchuk21 <krauchukvlad@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/node": "^17.0.25",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
 }
